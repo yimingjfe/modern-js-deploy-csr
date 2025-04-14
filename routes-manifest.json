@@ -10,11 +10,11 @@
         "909"
       ],
       "assets": [
-        "/modern-js-deploy-csr/static/js/lib-react.b30f3759.js",
-        "/modern-js-deploy-csr/static/js/lib-polyfill.86cb1f33.js",
-        "/modern-js-deploy-csr/static/js/lib-router.65517232.js",
-        "/modern-js-deploy-csr/static/js/399.f2cbf196.js",
-        "/modern-js-deploy-csr/static/js/main.fe903567.js"
+        "/static/js/lib-react.b30f3759.js",
+        "/static/js/lib-polyfill.86cb1f33.js",
+        "/static/js/lib-router.65517232.js",
+        "/static/js/399.3b7bd463.js",
+        "/static/js/main.a39d2eed.js"
       ],
       "referenceCssAssets": []
     },
@@ -24,12 +24,12 @@
         "484"
       ],
       "assets": [
-        "/modern-js-deploy-csr/static/js/async/86.3f9756e5.js",
-        "/modern-js-deploy-csr/static/js/async/page.25b8b462.js",
-        "/modern-js-deploy-csr/static/css/async/page.d7915515.css"
+        "/static/js/async/86.3f9756e5.js",
+        "/static/js/async/page.25b8b462.js",
+        "/static/css/async/page.d7915515.css"
       ],
       "referenceCssAssets": [
-        "/modern-js-deploy-csr/static/css/async/page.d7915515.css"
+        "/static/css/async/page.d7915515.css"
       ]
     }
   }
