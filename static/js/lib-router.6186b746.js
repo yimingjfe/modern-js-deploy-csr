@@ -2,7 +2,9 @@
 (self["webpackChunkmodern_js_deploy_csr"] = self["webpackChunkmodern_js_deploy_csr"] || []).push([["118"], {
 13252: (function (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 __webpack_require__.d(__webpack_exports__, {
+  Ep: () => (createPath),
   J0: () => (invariant),
+  LX: () => (matchPath),
   OF: () => (ErrorResponseImpl),
   RQ: () => (joinPaths),
   WK: () => (isRouteErrorResponse),
@@ -5133,9 +5135,11 @@ function persistAppliedTransitions(_window, transitions) {
 var react__WEBPACK_IMPORTED_MODULE_0___namespace_cache;
 var react_dom__WEBPACK_IMPORTED_MODULE_1___namespace_cache;
 __webpack_require__.d(__webpack_exports__, {
+  OL: () => (NavLink),
   aj: () => (createBrowserRouter),
   cP: () => (createHashRouter),
-  pG: () => (RouterProvider)
+  pG: () => (RouterProvider),
+  rU: () => (Link)
 });
 /* ESM import */var _swc_helpers_async_to_generator__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(34902);
 /* ESM import */var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75271);
@@ -5353,7 +5357,7 @@ function getFormSubmissionInfo(target, basename) {
         body
     };
 }
-var _excluded = (/* unused pure expression or super */ null && ([
+var _excluded = [
     "onClick",
     "relative",
     "reloadDocument",
@@ -5363,7 +5367,7 @@ var _excluded = (/* unused pure expression or super */ null && ([
     "to",
     "preventScrollReset",
     "viewTransition"
-])), _excluded2 = (/* unused pure expression or super */ null && ([
+], _excluded2 = [
     "aria-current",
     "caseSensitive",
     "className",
@@ -5372,7 +5376,7 @@ var _excluded = (/* unused pure expression or super */ null && ([
     "to",
     "viewTransition",
     "children"
-])), _excluded3 = (/* unused pure expression or super */ null && ([
+], _excluded3 = (/* unused pure expression or super */ null && ([
     "fetcherKey",
     "navigate",
     "reloadDocument",
@@ -5907,9 +5911,9 @@ var isBrowser = typeof window !== "undefined" && typeof window.document !== "und
 var ABSOLUTE_URL_REGEX = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i;
 /**
  * The public API for rendering a history-aware `<a>`.
- */ var Link = /*#__PURE__*/ (/* unused pure expression or super */ null && (React.forwardRef(function LinkWithRef(_ref7, ref) {
+ */ var Link = /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(function LinkWithRef(_ref7, ref) {
     var { onClick, relative, reloadDocument, replace, state, target, to, preventScrollReset, viewTransition } = _ref7, rest = _objectWithoutPropertiesLoose(_ref7, _excluded);
-    var { basename } = React.useContext(UNSAFE_NavigationContext);
+    var { basename } = react__WEBPACK_IMPORTED_MODULE_0__.useContext(react_router__WEBPACK_IMPORTED_MODULE_3__/* .UNSAFE_NavigationContext */.Us);
     // Rendered into <a href> for absolute URLs
     var absoluteHref;
     var isExternal = false;
@@ -5921,7 +5925,7 @@ var ABSOLUTE_URL_REGEX = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i;
             try {
                 var currentUrl = new URL(window.location.href);
                 var targetUrl = to.startsWith("//") ? new URL(currentUrl.protocol + to) : new URL(to);
-                var path = stripBasename(targetUrl.pathname, basename);
+                var path = (0,_remix_run_router__WEBPACK_IMPORTED_MODULE_2__/* .stripBasename */.Zn)(targetUrl.pathname, basename);
                 if (targetUrl.origin === currentUrl.origin && path != null) {
                     // Strip the protocol/origin/basename for same-origin absolute URLs
                     to = path + targetUrl.search + targetUrl.hash;
@@ -5935,7 +5939,7 @@ var ABSOLUTE_URL_REGEX = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i;
         }
     }
     // Rendered into <a href> for relative URLs
-    var href = useHref(to, {
+    var href = (0,react_router__WEBPACK_IMPORTED_MODULE_3__/* .useHref */.oQ)(to, {
         relative
     });
     var internalOnClick = useLinkClickHandler(to, {
@@ -5953,24 +5957,24 @@ var ABSOLUTE_URL_REGEX = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i;
         }
     }
     return(/*#__PURE__*/ // eslint-disable-next-line jsx-a11y/anchor-has-content
-    React.createElement("a", _extends({}, rest, {
+    react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", _extends({}, rest, {
         href: absoluteHref || href,
         onClick: isExternal || reloadDocument ? onClick : handleClick,
         ref: ref,
         target: target
     })));
-})));
+});
 if (false) {}
 /**
  * A `<Link>` wrapper that knows if it's "active" or not.
- */ var NavLink = /*#__PURE__*/ (/* unused pure expression or super */ null && (React.forwardRef(function NavLinkWithRef(_ref8, ref) {
+ */ var NavLink = /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(function NavLinkWithRef(_ref8, ref) {
     var { "aria-current": ariaCurrentProp = "page", caseSensitive = false, className: classNameProp = "", end = false, style: styleProp, to, viewTransition, children } = _ref8, rest = _objectWithoutPropertiesLoose(_ref8, _excluded2);
-    var path = useResolvedPath(to, {
+    var path = (0,react_router__WEBPACK_IMPORTED_MODULE_3__/* .useResolvedPath */.WU)(to, {
         relative: rest.relative
     });
-    var location = useLocation();
-    var routerState = React.useContext(UNSAFE_DataRouterStateContext);
-    var { navigator, basename } = React.useContext(UNSAFE_NavigationContext);
+    var location = (0,react_router__WEBPACK_IMPORTED_MODULE_3__/* .useLocation */.TH)();
+    var routerState = react__WEBPACK_IMPORTED_MODULE_0__.useContext(react_router__WEBPACK_IMPORTED_MODULE_3__/* .UNSAFE_DataRouterStateContext */.FR);
+    var { navigator, basename } = react__WEBPACK_IMPORTED_MODULE_0__.useContext(react_router__WEBPACK_IMPORTED_MODULE_3__/* .UNSAFE_NavigationContext */.Us);
     var isTransitioning = routerState != null && // Conditional usage is OK here because the usage of a data router is static
     // eslint-disable-next-line react-hooks/rules-of-hooks
     useViewTransitionState(path) && viewTransition === true;
@@ -5983,7 +5987,7 @@ if (false) {}
         toPathname = toPathname.toLowerCase();
     }
     if (nextLocationPathname && basename) {
-        nextLocationPathname = stripBasename(nextLocationPathname, basename) || nextLocationPathname;
+        nextLocationPathname = (0,_remix_run_router__WEBPACK_IMPORTED_MODULE_2__/* .stripBasename */.Zn)(nextLocationPathname, basename) || nextLocationPathname;
     }
     // If the `to` has a trailing slash, look at that exact spot.  Otherwise,
     // we're looking for a slash _after_ what's in `to`.  For example:
@@ -6016,7 +6020,7 @@ if (false) {}
         ].filter(Boolean).join(" ");
     }
     var style = typeof styleProp === "function" ? styleProp(renderProps) : styleProp;
-    return /*#__PURE__*/ React.createElement(Link, _extends({}, rest, {
+    return /*#__PURE__*/ react__WEBPACK_IMPORTED_MODULE_0__.createElement(Link, _extends({}, rest, {
         "aria-current": ariaCurrent,
         className: className,
         ref: ref,
@@ -6024,7 +6028,7 @@ if (false) {}
         to: to,
         viewTransition: viewTransition
     }), typeof children === "function" ? children(renderProps) : children);
-})));
+});
 if (false) {}
 /**
  * A `@remix-run/router`-aware `<form>`. It behaves like a normal form except
@@ -6098,8 +6102,8 @@ function getDataRouterConsoleError(hookName) {
     return hookName + " must be used within a data router.  See https://reactrouter.com/routers/picking-a-router.";
 }
 function useDataRouterContext(hookName) {
-    var ctx = React.useContext(UNSAFE_DataRouterContext);
-    !ctx ?  false ? 0 : UNSAFE_invariant(false) : void 0;
+    var ctx = react__WEBPACK_IMPORTED_MODULE_0__.useContext(react_router__WEBPACK_IMPORTED_MODULE_3__/* .UNSAFE_DataRouterContext */.w3);
+    !ctx ?  false ? 0 : (0,_remix_run_router__WEBPACK_IMPORTED_MODULE_2__/* .UNSAFE_invariant */.J0)(false) : void 0;
     return ctx;
 }
 function useDataRouterState(hookName) {
@@ -6114,17 +6118,17 @@ function useDataRouterState(hookName) {
  * use in our exported `<Link>`.
  */ function useLinkClickHandler(to, _temp) {
     var { target, replace: replaceProp, state, preventScrollReset, relative, viewTransition } = _temp === void 0 ? {} : _temp;
-    var navigate = useNavigate();
-    var location = useLocation();
-    var path = useResolvedPath(to, {
+    var navigate = (0,react_router__WEBPACK_IMPORTED_MODULE_3__/* .useNavigate */.s0)();
+    var location = (0,react_router__WEBPACK_IMPORTED_MODULE_3__/* .useLocation */.TH)();
+    var path = (0,react_router__WEBPACK_IMPORTED_MODULE_3__/* .useResolvedPath */.WU)(to, {
         relative
     });
-    return React.useCallback((event)=>{
+    return react__WEBPACK_IMPORTED_MODULE_0__.useCallback((event)=>{
         if (shouldProcessLinkClick(event, target)) {
             event.preventDefault();
             // If the URL hasn't changed, a regular <a> will do a replace instead of
             // a push, so do the same here unless the replace prop is explicitly set
-            var replace = replaceProp !== undefined ? replaceProp : createPath(location) === createPath(path);
+            var replace = replaceProp !== undefined ? replaceProp : (0,_remix_run_router__WEBPACK_IMPORTED_MODULE_2__/* .createPath */.Ep)(location) === (0,_remix_run_router__WEBPACK_IMPORTED_MODULE_2__/* .createPath */.Ep)(path);
             navigate(to, {
                 replace,
                 state,
@@ -6563,17 +6567,17 @@ var savedScrollPositions = (/* unused pure expression or super */ null && ({}));
     if (opts === void 0) {
         opts = {};
     }
-    var vtContext = React.useContext(ViewTransitionContext);
-    !(vtContext != null) ?  false ? 0 : UNSAFE_invariant(false) : void 0;
+    var vtContext = react__WEBPACK_IMPORTED_MODULE_0__.useContext(ViewTransitionContext);
+    !(vtContext != null) ?  false ? 0 : (0,_remix_run_router__WEBPACK_IMPORTED_MODULE_2__/* .UNSAFE_invariant */.J0)(false) : void 0;
     var { basename } = useDataRouterContext(DataRouterHook.useViewTransitionState);
-    var path = useResolvedPath(to, {
+    var path = (0,react_router__WEBPACK_IMPORTED_MODULE_3__/* .useResolvedPath */.WU)(to, {
         relative: opts.relative
     });
     if (!vtContext.isTransitioning) {
         return false;
     }
-    var currentPath = stripBasename(vtContext.currentLocation.pathname, basename) || vtContext.currentLocation.pathname;
-    var nextPath = stripBasename(vtContext.nextLocation.pathname, basename) || vtContext.nextLocation.pathname;
+    var currentPath = (0,_remix_run_router__WEBPACK_IMPORTED_MODULE_2__/* .stripBasename */.Zn)(vtContext.currentLocation.pathname, basename) || vtContext.currentLocation.pathname;
+    var nextPath = (0,_remix_run_router__WEBPACK_IMPORTED_MODULE_2__/* .stripBasename */.Zn)(vtContext.nextLocation.pathname, basename) || vtContext.nextLocation.pathname;
     // Transition is active if we're going to or coming from the indicated
     // destination.  This ensures that other PUSH navigations that reverse
     // an indicated transition apply.  I.e., on the list view you have:
@@ -6587,7 +6591,7 @@ var savedScrollPositions = (/* unused pure expression or super */ null && ({}));
     // We should apply the transition because it's indicated as active going
     // from /list -> /details/1 and therefore should be active on the reverse
     // (even though this isn't strictly a POP reverse)
-    return matchPath(path.pathname, nextPath) != null || matchPath(path.pathname, currentPath) != null;
+    return (0,_remix_run_router__WEBPACK_IMPORTED_MODULE_2__/* .matchPath */.LX)(path.pathname, nextPath) != null || (0,_remix_run_router__WEBPACK_IMPORTED_MODULE_2__/* .matchPath */.LX)(path.pathname, currentPath) != null;
 }
 //#endregion
  //# sourceMappingURL=index.js.map
@@ -6603,9 +6607,12 @@ __webpack_require__.d(__webpack_exports__, {
   FR: () => (DataRouterStateContext),
   SN: () => (useMatches),
   TH: () => (useLocation),
+  Us: () => (NavigationContext),
+  WU: () => (useResolvedPath),
   i7: () => (createRoutesFromChildren),
   j3: () => (Outlet),
   oQ: () => (useHref),
+  s0: () => (useNavigate),
   us: () => (mapRouteProperties),
   w3: () => (DataRouterContext)
 });
@@ -6741,12 +6748,12 @@ if (false) {}
  */ var navigateEffectWarning = (/* unused pure expression or super */ null && ("You should call navigate() in a React.useEffect(), not when " + "your component is first rendered."));
 // Mute warnings for calls to useNavigate in SSR environments
 function useIsomorphicLayoutEffect(cb) {
-    var isStatic = React.useContext(NavigationContext).static;
+    var isStatic = react__WEBPACK_IMPORTED_MODULE_0__.useContext(NavigationContext).static;
     if (!isStatic) {
         // We should be able to get rid of this once react 18.3 is released
         // See: https://github.com/facebook/react/pull/26395
         // eslint-disable-next-line react-hooks/rules-of-hooks
-        React.useLayoutEffect(cb);
+        react__WEBPACK_IMPORTED_MODULE_0__.useLayoutEffect(cb);
     }
 }
 /**
@@ -6755,23 +6762,23 @@ function useIsomorphicLayoutEffect(cb) {
  *
  * @see https://reactrouter.com/hooks/use-navigate
  */ function useNavigate() {
-    var { isDataRoute } = React.useContext(RouteContext);
+    var { isDataRoute } = react__WEBPACK_IMPORTED_MODULE_0__.useContext(RouteContext);
     // Conditional usage is OK here because the usage of a data router is static
     // eslint-disable-next-line react-hooks/rules-of-hooks
     return isDataRoute ? useNavigateStable() : useNavigateUnstable();
 }
 function useNavigateUnstable() {
-    !useInRouterContext() ?  false ? 0 : UNSAFE_invariant(false) : void 0;
-    var dataRouterContext = React.useContext(DataRouterContext);
-    var { basename, future, navigator } = React.useContext(NavigationContext);
-    var { matches } = React.useContext(RouteContext);
+    !useInRouterContext() ?  false ? 0 : (0,_remix_run_router__WEBPACK_IMPORTED_MODULE_1__/* .UNSAFE_invariant */.J0)(false) : void 0;
+    var dataRouterContext = react__WEBPACK_IMPORTED_MODULE_0__.useContext(DataRouterContext);
+    var { basename, future, navigator } = react__WEBPACK_IMPORTED_MODULE_0__.useContext(NavigationContext);
+    var { matches } = react__WEBPACK_IMPORTED_MODULE_0__.useContext(RouteContext);
     var { pathname: locationPathname } = useLocation();
-    var routePathnamesJson = JSON.stringify(UNSAFE_getResolveToMatches(matches, future.v7_relativeSplatPath));
-    var activeRef = React.useRef(false);
+    var routePathnamesJson = JSON.stringify((0,_remix_run_router__WEBPACK_IMPORTED_MODULE_1__/* .UNSAFE_getResolveToMatches */.cm)(matches, future.v7_relativeSplatPath));
+    var activeRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef(false);
     useIsomorphicLayoutEffect(()=>{
         activeRef.current = true;
     });
-    var navigate = React.useCallback(function(to, options) {
+    var navigate = react__WEBPACK_IMPORTED_MODULE_0__.useCallback(function(to, options) {
         if (options === void 0) {
             options = {};
         }
@@ -6783,7 +6790,7 @@ function useNavigateUnstable() {
             navigator.go(to);
             return;
         }
-        var path = resolveTo(to, JSON.parse(routePathnamesJson), locationPathname, options.relative === "path");
+        var path = (0,_remix_run_router__WEBPACK_IMPORTED_MODULE_1__/* .resolveTo */.pC)(to, JSON.parse(routePathnamesJson), locationPathname, options.relative === "path");
         // If we're operating within a basename, prepend it to the pathname prior
         // to handing off to history (but only if we're not in a data router,
         // otherwise it'll prepend the basename inside of the router).
@@ -6791,7 +6798,7 @@ function useNavigateUnstable() {
         // which allows the basename to have full control over the presence of a
         // trailing slash on root links
         if (dataRouterContext == null && basename !== "/") {
-            path.pathname = path.pathname === "/" ? basename : joinPaths([
+            path.pathname = path.pathname === "/" ? basename : (0,_remix_run_router__WEBPACK_IMPORTED_MODULE_1__/* .joinPaths */.RQ)([
                 basename,
                 path.pathname
             ]);
@@ -7169,12 +7176,12 @@ function _renderMatches(matches, parentMatches, dataRouterState, future) {
         }) : getChildren();
     }, null);
 }
-var DataRouterHook = /*#__PURE__*/ (/* unused pure expression or super */ null && (function(DataRouterHook) {
+var DataRouterHook = /*#__PURE__*/ function(DataRouterHook) {
     DataRouterHook["UseBlocker"] = "useBlocker";
     DataRouterHook["UseRevalidator"] = "useRevalidator";
     DataRouterHook["UseNavigateStable"] = "useNavigate";
     return DataRouterHook;
-}(DataRouterHook || {})));
+}(DataRouterHook || {});
 var DataRouterStateHook = /*#__PURE__*/ function(DataRouterStateHook) {
     DataRouterStateHook["UseBlocker"] = "useBlocker";
     DataRouterStateHook["UseLoaderData"] = "useLoaderData";
@@ -7192,8 +7199,8 @@ function getDataRouterConsoleError(hookName) {
     return hookName + " must be used within a data router.  See https://reactrouter.com/routers/picking-a-router.";
 }
 function useDataRouterContext(hookName) {
-    var ctx = React.useContext(DataRouterContext);
-    !ctx ?  false ? 0 : UNSAFE_invariant(false) : void 0;
+    var ctx = react__WEBPACK_IMPORTED_MODULE_0__.useContext(DataRouterContext);
+    !ctx ?  false ? 0 : (0,_remix_run_router__WEBPACK_IMPORTED_MODULE_1__/* .UNSAFE_invariant */.J0)(false) : void 0;
     return ctx;
 }
 function useDataRouterState(hookName) {
@@ -7368,11 +7375,11 @@ var blockerId = 0;
  */ function useNavigateStable() {
     var { router } = useDataRouterContext(DataRouterHook.UseNavigateStable);
     var id = useCurrentRouteId(DataRouterStateHook.UseNavigateStable);
-    var activeRef = React.useRef(false);
+    var activeRef = react__WEBPACK_IMPORTED_MODULE_0__.useRef(false);
     useIsomorphicLayoutEffect(()=>{
         activeRef.current = true;
     });
-    var navigate = React.useCallback(function(to, options) {
+    var navigate = react__WEBPACK_IMPORTED_MODULE_0__.useCallback(function(to, options) {
         if (options === void 0) {
             options = {};
         }

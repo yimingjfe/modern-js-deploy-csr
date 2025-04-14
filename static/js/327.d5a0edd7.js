@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunkmodern_js_deploy_csr"] = self["webpackChunkmodern_js_deploy_csr"] || []).push([["399"], {
+(self["webpackChunkmodern_js_deploy_csr"] = self["webpackChunkmodern_js_deploy_csr"] || []).push([["327"], {
 74874: (function (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 __webpack_require__.d(__webpack_exports__, {
   mc: () => (defineRuntimeConfig)
@@ -18,6 +18,301 @@ var defineConfig = function(Component, config) {
 var defineRuntimeConfig = function(config) {
   return config;
 };
+
+
+
+}),
+39714: (function (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+__webpack_require__.d(__webpack_exports__, {
+  JO: () => (RuntimeReactContext),
+  zv: () => (getInitialContext)
+});
+/* ESM import */var _modern_js_utils_universal_constants__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(29952);
+/* ESM import */var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75271);
+/* ESM import */var _loader_loaderManager__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(66892);
+
+
+
+var RuntimeReactContext = (0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)({});
+var ServerRouterContext = (0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)({});
+var getInitialContext = function() {
+  var isBrowser = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : true, routeManifest = arguments.length > 1 ? arguments[1] : void 0;
+  return {
+    loaderManager: (0,_loader_loaderManager__WEBPACK_IMPORTED_MODULE_1__/* .createLoaderManager */.K)({}),
+    isBrowser,
+    routeManifest: routeManifest || typeof window !== "undefined" && window[_modern_js_utils_universal_constants__WEBPACK_IMPORTED_MODULE_2__/* .ROUTE_MANIFEST */.p9]
+  };
+};
+
+
+
+}),
+66892: (function (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+__webpack_require__.d(__webpack_exports__, {
+  K: () => (createLoaderManager)
+});
+/* ESM import */var _swc_helpers_async_to_generator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(34902);
+/* ESM import */var _swc_helpers_instanceof__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(45204);
+/* ESM import */var _swc_helpers_sliced_to_array__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(41299);
+/* ESM import */var _swc_helpers_to_consumable_array__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(88511);
+/* ESM import */var _swc_helpers_ts_generator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(9787);
+/* ESM import */var invariant__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(53670);
+/* ESM import */var invariant__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(invariant__WEBPACK_IMPORTED_MODULE_0__);
+
+
+
+
+
+
+var createGetId = function() {
+  var idCache = /* @__PURE__ */ new Map();
+  return function(objectId) {
+    var cachedId = idCache.get(objectId);
+    if (cachedId) {
+      return cachedId;
+    }
+    var id = JSON.stringify(objectId);
+    invariant__WEBPACK_IMPORTED_MODULE_0___default()(id, "params should be not null value");
+    idCache.set(objectId, id);
+    return id;
+  };
+};
+var LoaderStatus;
+(function(LoaderStatus2) {
+  LoaderStatus2[LoaderStatus2["idle"] = 0] = "idle";
+  LoaderStatus2[LoaderStatus2["loading"] = 1] = "loading";
+  LoaderStatus2[LoaderStatus2["fulfilled"] = 2] = "fulfilled";
+  LoaderStatus2[LoaderStatus2["rejected"] = 3] = "rejected";
+})(LoaderStatus || (LoaderStatus = {}));
+var createLoader = function(id) {
+  var initialData = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {
+    loading: false,
+    reloading: false,
+    data: void 0,
+    error: void 0
+  }, loaderFn = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : function() {
+    return Promise.resolve();
+  }, skip = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : false;
+  var promise;
+  var status = 0;
+  var data = initialData.data, error = initialData.error;
+  var hasLoaded = false;
+  var handlers = /* @__PURE__ */ new Set();
+  var load = function() {
+    var _ref = (0,_swc_helpers_async_to_generator__WEBPACK_IMPORTED_MODULE_1__._)(function() {
+      return (0,_swc_helpers_ts_generator__WEBPACK_IMPORTED_MODULE_2__/* .__generator */.Jh)(this, function(_state) {
+        if (skip) {
+          return [
+            2,
+            promise
+          ];
+        }
+        if (status === 1) {
+          return [
+            2,
+            promise
+          ];
+        }
+        status = 1;
+        notify();
+        promise = loaderFn().then(function(value) {
+          data = value;
+          error = null;
+          status = 2;
+        }).catch(function(e) {
+          error = e;
+          data = null;
+          status = 3;
+        }).finally(function() {
+          promise = null;
+          hasLoaded = true;
+          notify();
+        });
+        return [
+          2,
+          promise
+        ];
+      });
+    });
+    return function load2() {
+      return _ref.apply(this, arguments);
+    };
+  }();
+  var getResult = function() {
+    return {
+      loading: !hasLoaded && status === 1,
+      reloading: hasLoaded && status === 1,
+      data,
+      error: (0,_swc_helpers_instanceof__WEBPACK_IMPORTED_MODULE_3__._)(error, Error) ? "".concat(error.message) : error,
+      // redundant fields for ssr log
+      _error: error
+    };
+  };
+  var notify = function() {
+    (0,_swc_helpers_to_consumable_array__WEBPACK_IMPORTED_MODULE_4__._)(handlers).forEach(function(handler) {
+      handler(status, getResult());
+    });
+  };
+  var onChange = function(handler) {
+    handlers.add(handler);
+    return function() {
+      handlers.delete(handler);
+    };
+  };
+  return {
+    get result() {
+      return getResult();
+    },
+    get promise() {
+      return promise;
+    },
+    onChange,
+    load
+  };
+};
+var createLoaderManager = function(initialDataMap) {
+  var managerOptions = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
+  var _managerOptions_skipStatic = managerOptions.skipStatic, skipStatic = _managerOptions_skipStatic === void 0 ? false : _managerOptions_skipStatic, _managerOptions_skipNonStatic = managerOptions.skipNonStatic, skipNonStatic = _managerOptions_skipNonStatic === void 0 ? false : _managerOptions_skipNonStatic;
+  var loadersMap = /* @__PURE__ */ new Map();
+  var getId = createGetId();
+  var add = function(loaderFn, loaderOptions) {
+    var id = getId(loaderOptions.params);
+    var loader = loadersMap.get(id);
+    var cache = loaderOptions._cache;
+    if (!loader || cache === false) {
+      var ignoreNonStatic = skipNonStatic && !loaderOptions.static;
+      var ignoreStatic = skipStatic && loaderOptions.static;
+      var skipExec = ignoreNonStatic || ignoreStatic;
+      loader = createLoader(
+        id,
+        typeof initialDataMap[id] !== "undefined" ? initialDataMap[id] : {
+          data: loaderOptions.initialData
+        },
+        loaderFn,
+        // Todo whether static loader is exec when CSR
+        skipExec
+      );
+      loadersMap.set(id, loader);
+    }
+    return id;
+  };
+  var get = function(id) {
+    return loadersMap.get(id);
+  };
+  var hasPendingLoaders = function() {
+    var _iteratorNormalCompletion = true, _didIteratorError = false, _iteratorError = void 0;
+    try {
+      for (var _iterator = loadersMap.values()[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+        var loader = _step.value;
+        var promise = loader.promise;
+        if ((0,_swc_helpers_instanceof__WEBPACK_IMPORTED_MODULE_3__._)(promise, Promise)) {
+          return true;
+        }
+      }
+    } catch (err) {
+      _didIteratorError = true;
+      _iteratorError = err;
+    } finally {
+      try {
+        if (!_iteratorNormalCompletion && _iterator.return != null) {
+          _iterator.return();
+        }
+      } finally {
+        if (_didIteratorError) {
+          throw _iteratorError;
+        }
+      }
+    }
+    return false;
+  };
+  var awaitPendingLoaders = function() {
+    var _ref = (0,_swc_helpers_async_to_generator__WEBPACK_IMPORTED_MODULE_1__._)(function() {
+      var pendingLoaders, _iteratorNormalCompletion, _didIteratorError, _iteratorError, _iterator, _step, _step_value, id, loader, promise;
+      return (0,_swc_helpers_ts_generator__WEBPACK_IMPORTED_MODULE_2__/* .__generator */.Jh)(this, function(_state) {
+        switch (_state.label) {
+          case 0:
+            pendingLoaders = [];
+            _iteratorNormalCompletion = true, _didIteratorError = false, _iteratorError = void 0;
+            try {
+              for (_iterator = loadersMap[Symbol.iterator](); !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+                _step_value = (0,_swc_helpers_sliced_to_array__WEBPACK_IMPORTED_MODULE_5__._)(_step.value, 2), id = _step_value[0], loader = _step_value[1];
+                promise = loader.promise;
+                if ((0,_swc_helpers_instanceof__WEBPACK_IMPORTED_MODULE_3__._)(promise, Promise)) {
+                  pendingLoaders.push([
+                    id,
+                    loader
+                  ]);
+                }
+              }
+            } catch (err) {
+              _didIteratorError = true;
+              _iteratorError = err;
+            } finally {
+              try {
+                if (!_iteratorNormalCompletion && _iterator.return != null) {
+                  _iterator.return();
+                }
+              } finally {
+                if (_didIteratorError) {
+                  throw _iteratorError;
+                }
+              }
+            }
+            return [
+              4,
+              Promise.all(pendingLoaders.map(function(item) {
+                return item[1].promise;
+              }))
+            ];
+          case 1:
+            _state.sent();
+            return [
+              2,
+              pendingLoaders.reduce(function(res, param) {
+                var _param = (0,_swc_helpers_sliced_to_array__WEBPACK_IMPORTED_MODULE_5__._)(param, 2), id2 = _param[0], loader2 = _param[1];
+                res[id2] = loader2.result;
+                return res;
+              }, {})
+            ];
+        }
+      });
+    });
+    return function awaitPendingLoaders2() {
+      return _ref.apply(this, arguments);
+    };
+  }();
+  return {
+    hasPendingLoaders,
+    awaitPendingLoaders,
+    add,
+    get
+  };
+};
+
+
+
+}),
+29952: (function (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+__webpack_require__.d(__webpack_exports__, {
+  m5: () => (LOADER_REPORTER_NAME),
+  p9: () => (ROUTE_MANIFEST),
+  u$: () => (ROUTE_MODULES)
+});
+var ROUTE_MANIFEST = "_MODERNJS_ROUTE_MANIFEST";
+var ROUTE_MODULES = "_routeModules";
+var HMR_SOCK_PATH = "/webpack-hmr";
+var HTML_CHUNKSMAP_SEPARATOR = "<!--<?- chunksMap.js ?>-->";
+var LOADER_REPORTER_NAME = "server-loader";
+var ROUTE_SPEC_FILE = "route.json";
+var NESTED_ROUTE_SPEC_FILE = "nestedRoutes.json";
+var MAIN_ENTRY_NAME = "main";
+var SERVER_BUNDLE_DIRECTORY = "bundles";
+var SERVER_RENDER_FUNCTION_NAME = "serverRender";
+var SERVER_PLUGIN_BFF = "@modern-js/plugin-bff";
+var SERVER_PLUGIN_EXPRESS = "@modern-js/plugin-express";
+var SERVER_PLUGIN_KOA = "@modern-js/plugin-koa";
+var SERVER_PLUGIN_SERVER = "@modern-js/plugin-server";
+var SERVER_PLUGIN_POLYFILL = "@modern-js/plugin-polyfill";
 
 
 
@@ -545,7 +840,7 @@ if (true) {
 
 
 }),
-57434: (function (__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
+17868: (function (__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(52676);
@@ -594,24 +889,8 @@ function getGlobalLayoutApp() {
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
 var react = __webpack_require__(75271);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@modern-js+utils@2.67.1/node_modules/@modern-js/utils/dist/esm/universal/constants.js
-var ROUTE_MANIFEST = "_MODERNJS_ROUTE_MANIFEST";
-var constants_ROUTE_MODULES = "_routeModules";
-var HMR_SOCK_PATH = "/webpack-hmr";
-var HTML_CHUNKSMAP_SEPARATOR = "<!--<?- chunksMap.js ?>-->";
-var LOADER_REPORTER_NAME = "server-loader";
-var ROUTE_SPEC_FILE = "route.json";
-var NESTED_ROUTE_SPEC_FILE = "nestedRoutes.json";
-var MAIN_ENTRY_NAME = "main";
-var SERVER_BUNDLE_DIRECTORY = "bundles";
-var SERVER_RENDER_FUNCTION_NAME = "serverRender";
-var SERVER_PLUGIN_BFF = "@modern-js/plugin-bff";
-var SERVER_PLUGIN_EXPRESS = "@modern-js/plugin-express";
-var SERVER_PLUGIN_KOA = "@modern-js/plugin-koa";
-var SERVER_PLUGIN_SERVER = "@modern-js/plugin-server";
-var SERVER_PLUGIN_POLYFILL = "@modern-js/plugin-polyfill";
-
-
+// EXTERNAL MODULE: ./node_modules/.pnpm/@modern-js+utils@2.67.1/node_modules/@modern-js/utils/dist/esm/universal/constants.js
+var constants = __webpack_require__(29952);
 ;// CONCATENATED MODULE: ./node_modules/.pnpm/@modern-js+runtime@2.67.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@modern-js/runtime/dist/esm/router/runtime/routeModule.js
 
 var createShouldRevalidate = function(routeId) {
@@ -626,7 +905,7 @@ var createShouldRevalidate = function(routeId) {
 };
 var handleRouteModule = function(routeModule, routeId) {
   if (typeof document !== "undefined") {
-    window[constants_ROUTE_MODULES][routeId] = routeModule;
+    window[constants/* ROUTE_MODULES */.u$][routeId] = routeModule;
   }
   return routeModule;
 };
@@ -654,8 +933,16 @@ var routes_routes = [
                 "index": true,
                 "id": "page",
                 "type": "nested",
-                "lazyImport": ()=>Promise.all(/* import() | page */ [__webpack_require__.e("86"), __webpack_require__.e("484")]).then(__webpack_require__.bind(__webpack_require__, 58623)).then((routeModule)=>handleRouteModule(routeModule, "page")).catch(handleRouteModuleError),
-                "component": /*#__PURE__*/ (0,react.lazy)(()=>Promise.all(/* import() | page */ [__webpack_require__.e("86"), __webpack_require__.e("484")]).then(__webpack_require__.bind(__webpack_require__, 58623)).then((routeModule)=>handleRouteModule(routeModule, "page")).catch(handleRouteModuleError))
+                "lazyImport": ()=>Promise.all(/* import() | page */ [__webpack_require__.e("940"), __webpack_require__.e("484")]).then(__webpack_require__.bind(__webpack_require__, 58623)).then((routeModule)=>handleRouteModule(routeModule, "page")).catch(handleRouteModuleError),
+                "component": /*#__PURE__*/ (0,react.lazy)(()=>Promise.all(/* import() | page */ [__webpack_require__.e("940"), __webpack_require__.e("484")]).then(__webpack_require__.bind(__webpack_require__, 58623)).then((routeModule)=>handleRouteModule(routeModule, "page")).catch(handleRouteModuleError))
+            },
+            {
+                "_component": "@_modern_js_src/routes/user/page",
+                "id": "user/page",
+                "type": "nested",
+                "path": "user",
+                "lazyImport": ()=>__webpack_require__.e(/* import() | user/page */ "590").then(__webpack_require__.bind(__webpack_require__, 70876)).then((routeModule)=>handleRouteModule(routeModule, "user/page")).catch(handleRouteModuleError),
+                "component": /*#__PURE__*/ (0,react.lazy)(()=>__webpack_require__.e(/* import() | user/page */ "590").then(__webpack_require__.bind(__webpack_require__, 70876)).then((routeModule)=>handleRouteModule(routeModule, "user/page")).catch(handleRouteModuleError))
             }
         ],
         "isRoot": true,
@@ -1759,268 +2046,16 @@ function normalizePathname(pathname) {
 }
 
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@swc+helpers@0.5.17/node_modules/@swc/helpers/esm/_instanceof.js
-var esm_instanceof = __webpack_require__(45204);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@swc+helpers@0.5.17/node_modules/@swc/helpers/esm/_sliced_to_array.js + 3 modules
-var esm_sliced_to_array = __webpack_require__(41299);
-// EXTERNAL MODULE: ./node_modules/.pnpm/invariant@2.2.4/node_modules/invariant/browser.js
-var browser = __webpack_require__(53670);
-var browser_default = /*#__PURE__*/__webpack_require__.n(browser);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@modern-js+runtime@2.67.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@modern-js/runtime/dist/esm/core/loader/loaderManager.js
-
-
-
-
-
-
-var createGetId = function() {
-  var idCache = /* @__PURE__ */ new Map();
-  return function(objectId) {
-    var cachedId = idCache.get(objectId);
-    if (cachedId) {
-      return cachedId;
-    }
-    var id = JSON.stringify(objectId);
-    browser_default()(id, "params should be not null value");
-    idCache.set(objectId, id);
-    return id;
-  };
-};
-var LoaderStatus;
-(function(LoaderStatus2) {
-  LoaderStatus2[LoaderStatus2["idle"] = 0] = "idle";
-  LoaderStatus2[LoaderStatus2["loading"] = 1] = "loading";
-  LoaderStatus2[LoaderStatus2["fulfilled"] = 2] = "fulfilled";
-  LoaderStatus2[LoaderStatus2["rejected"] = 3] = "rejected";
-})(LoaderStatus || (LoaderStatus = {}));
-var createLoader = function(id) {
-  var initialData = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {
-    loading: false,
-    reloading: false,
-    data: void 0,
-    error: void 0
-  }, loaderFn = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : function() {
-    return Promise.resolve();
-  }, skip = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : false;
-  var promise;
-  var status = 0;
-  var data = initialData.data, error = initialData.error;
-  var hasLoaded = false;
-  var handlers = /* @__PURE__ */ new Set();
-  var load = function() {
-    var _ref = (0,esm_async_to_generator._)(function() {
-      return (0,tslib_es6/* __generator */.Jh)(this, function(_state) {
-        if (skip) {
-          return [
-            2,
-            promise
-          ];
-        }
-        if (status === 1) {
-          return [
-            2,
-            promise
-          ];
-        }
-        status = 1;
-        notify();
-        promise = loaderFn().then(function(value) {
-          data = value;
-          error = null;
-          status = 2;
-        }).catch(function(e) {
-          error = e;
-          data = null;
-          status = 3;
-        }).finally(function() {
-          promise = null;
-          hasLoaded = true;
-          notify();
-        });
-        return [
-          2,
-          promise
-        ];
-      });
-    });
-    return function load2() {
-      return _ref.apply(this, arguments);
-    };
-  }();
-  var getResult = function() {
-    return {
-      loading: !hasLoaded && status === 1,
-      reloading: hasLoaded && status === 1,
-      data,
-      error: (0,esm_instanceof._)(error, Error) ? "".concat(error.message) : error,
-      // redundant fields for ssr log
-      _error: error
-    };
-  };
-  var notify = function() {
-    (0,esm_to_consumable_array._)(handlers).forEach(function(handler) {
-      handler(status, getResult());
-    });
-  };
-  var onChange = function(handler) {
-    handlers.add(handler);
-    return function() {
-      handlers.delete(handler);
-    };
-  };
-  return {
-    get result() {
-      return getResult();
-    },
-    get promise() {
-      return promise;
-    },
-    onChange,
-    load
-  };
-};
-var createLoaderManager = function(initialDataMap) {
-  var managerOptions = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
-  var _managerOptions_skipStatic = managerOptions.skipStatic, skipStatic = _managerOptions_skipStatic === void 0 ? false : _managerOptions_skipStatic, _managerOptions_skipNonStatic = managerOptions.skipNonStatic, skipNonStatic = _managerOptions_skipNonStatic === void 0 ? false : _managerOptions_skipNonStatic;
-  var loadersMap = /* @__PURE__ */ new Map();
-  var getId = createGetId();
-  var add = function(loaderFn, loaderOptions) {
-    var id = getId(loaderOptions.params);
-    var loader = loadersMap.get(id);
-    var cache = loaderOptions._cache;
-    if (!loader || cache === false) {
-      var ignoreNonStatic = skipNonStatic && !loaderOptions.static;
-      var ignoreStatic = skipStatic && loaderOptions.static;
-      var skipExec = ignoreNonStatic || ignoreStatic;
-      loader = createLoader(
-        id,
-        typeof initialDataMap[id] !== "undefined" ? initialDataMap[id] : {
-          data: loaderOptions.initialData
-        },
-        loaderFn,
-        // Todo whether static loader is exec when CSR
-        skipExec
-      );
-      loadersMap.set(id, loader);
-    }
-    return id;
-  };
-  var get = function(id) {
-    return loadersMap.get(id);
-  };
-  var hasPendingLoaders = function() {
-    var _iteratorNormalCompletion = true, _didIteratorError = false, _iteratorError = void 0;
-    try {
-      for (var _iterator = loadersMap.values()[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-        var loader = _step.value;
-        var promise = loader.promise;
-        if ((0,esm_instanceof._)(promise, Promise)) {
-          return true;
-        }
-      }
-    } catch (err) {
-      _didIteratorError = true;
-      _iteratorError = err;
-    } finally {
-      try {
-        if (!_iteratorNormalCompletion && _iterator.return != null) {
-          _iterator.return();
-        }
-      } finally {
-        if (_didIteratorError) {
-          throw _iteratorError;
-        }
-      }
-    }
-    return false;
-  };
-  var awaitPendingLoaders = function() {
-    var _ref = (0,esm_async_to_generator._)(function() {
-      var pendingLoaders, _iteratorNormalCompletion, _didIteratorError, _iteratorError, _iterator, _step, _step_value, id, loader, promise;
-      return (0,tslib_es6/* __generator */.Jh)(this, function(_state) {
-        switch (_state.label) {
-          case 0:
-            pendingLoaders = [];
-            _iteratorNormalCompletion = true, _didIteratorError = false, _iteratorError = void 0;
-            try {
-              for (_iterator = loadersMap[Symbol.iterator](); !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-                _step_value = (0,esm_sliced_to_array._)(_step.value, 2), id = _step_value[0], loader = _step_value[1];
-                promise = loader.promise;
-                if ((0,esm_instanceof._)(promise, Promise)) {
-                  pendingLoaders.push([
-                    id,
-                    loader
-                  ]);
-                }
-              }
-            } catch (err) {
-              _didIteratorError = true;
-              _iteratorError = err;
-            } finally {
-              try {
-                if (!_iteratorNormalCompletion && _iterator.return != null) {
-                  _iterator.return();
-                }
-              } finally {
-                if (_didIteratorError) {
-                  throw _iteratorError;
-                }
-              }
-            }
-            return [
-              4,
-              Promise.all(pendingLoaders.map(function(item) {
-                return item[1].promise;
-              }))
-            ];
-          case 1:
-            _state.sent();
-            return [
-              2,
-              pendingLoaders.reduce(function(res, param) {
-                var _param = (0,esm_sliced_to_array._)(param, 2), id2 = _param[0], loader2 = _param[1];
-                res[id2] = loader2.result;
-                return res;
-              }, {})
-            ];
-        }
-      });
-    });
-    return function awaitPendingLoaders2() {
-      return _ref.apply(this, arguments);
-    };
-  }();
-  return {
-    hasPendingLoaders,
-    awaitPendingLoaders,
-    add,
-    get
-  };
-};
-
-
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@modern-js+runtime@2.67.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@modern-js/runtime/dist/esm/core/context/runtime.js
-
-
-
-var RuntimeReactContext = (0,react.createContext)({});
-var ServerRouterContext = (0,react.createContext)({});
-var getInitialContext = function() {
-  var isBrowser = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : true, routeManifest = arguments.length > 1 ? arguments[1] : void 0;
-  return {
-    loaderManager: createLoaderManager({}),
-    isBrowser,
-    routeManifest: routeManifest || typeof window !== "undefined" && window[ROUTE_MANIFEST]
-  };
-};
-
-
+// EXTERNAL MODULE: ./node_modules/.pnpm/@modern-js+runtime@2.67.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@modern-js/runtime/dist/esm/core/context/runtime.js
+var context_runtime = __webpack_require__(39714);
 ;// CONCATENATED MODULE: ./node_modules/.pnpm/@modern-js+runtime@2.67.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@modern-js/runtime/dist/esm/router/runtime/hooks.js
 
 var modifyRoutes = createSyncHook();
 var onBeforeCreateRoutes = createSyncHook();
 
 
+// EXTERNAL MODULE: ./node_modules/.pnpm/@swc+helpers@0.5.17/node_modules/@swc/helpers/esm/_sliced_to_array.js + 3 modules
+var esm_sliced_to_array = __webpack_require__(41299);
 ;// CONCATENATED MODULE: ./node_modules/.pnpm/@modern-js+runtime-utils@2.67.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@modern-js/runtime-utils/dist/esm/time.js
 
 function processHrtime(previousTimestamp) {
@@ -2106,7 +2141,7 @@ var renderNestedRoute = function(nestedRoute) {
     caseSensitive: nestedRoute.caseSensitive,
     path: nestedRoute.path,
     id: nestedRoute.id,
-    loader: nestedRoutes_createLoader(nestedRoute),
+    loader: createLoader(nestedRoute),
     action: nestedRoute.action,
     hasErrorBoundary: nestedRoute.hasErrorBoundary,
     shouldRevalidate: nestedRoute.shouldRevalidate,
@@ -2165,7 +2200,7 @@ var renderNestedRoute = function(nestedRoute) {
   }), id);
   return routeElement;
 };
-function nestedRoutes_createLoader(route) {
+function createLoader(route) {
   var loader = route.loader;
   if (loader) {
     return function() {
@@ -2188,7 +2223,7 @@ function nestedRoutes_createLoader(route) {
               if (typeof document === "undefined") {
                 ;
                 storage = getAsyncLocalStorage();
-                storage === null || storage === void 0 ? void 0 : (_storage_useContext_monitors = storage.useContext().monitors) === null || _storage_useContext_monitors === void 0 ? void 0 : _storage_useContext_monitors.timing("".concat(LOADER_REPORTER_NAME, "-").concat(route.id), cost);
+                storage === null || storage === void 0 ? void 0 : (_storage_useContext_monitors = storage.useContext().monitors) === null || _storage_useContext_monitors === void 0 ? void 0 : _storage_useContext_monitors.timing("".concat(constants/* LOADER_REPORTER_NAME */.m5, "-").concat(route.id), cost);
               }
               return [
                 2,
@@ -2511,7 +2546,7 @@ var routerPlugin = function() {
         }
         var getRouteApp = function() {
           var useCreateRouter = function(props) {
-            var runtimeContext = (0,react.useContext)(RuntimeReactContext);
+            var runtimeContext = (0,react.useContext)(context_runtime/* RuntimeReactContext */.JO);
             var baseUrl = select(location.pathname).replace(/^\/*/, "/");
             var _basename = baseUrl === "/" ? urlJoin(baseUrl, runtimeContext._internalRouterBaseName || basename) : baseUrl;
             var hydrationData = window._ROUTER_DATA;
@@ -2630,7 +2665,7 @@ var parsedJSONFromElement = function(id) {
 
 
 ;// CONCATENATED MODULE: ./node_modules/.pnpm/@modern-js+runtime@2.67.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@modern-js/runtime/dist/esm/common.js
-var common_isBrowser = function() {
+var isBrowser = function() {
   return typeof window !== "undefined" && window.name !== "nodejs";
 };
 var JSX_SHELL_STREAM_END_MARK = "<!--<?- SHELL_STREAM_END ?>-->";
@@ -2655,7 +2690,7 @@ var ROUTER_DATA_JSON_ID = "__MODERN_ROUTER_DATA__";
 
 function createRoot(UserApp) {
   var App = UserApp || getGlobalApp();
-  if (common_isBrowser()) {
+  if (isBrowser()) {
     window._SSR_DATA = window._SSR_DATA || parsedJSONFromElement(SSR_DATA_JSON_ID);
     window._ROUTER_DATA = window._ROUTER_DATA || parsedJSONFromElement(ROUTER_DATA_JSON_ID);
   }
@@ -2666,13 +2701,17 @@ function createRoot(UserApp) {
 }
 
 
+// EXTERNAL MODULE: ./node_modules/.pnpm/@swc+helpers@0.5.17/node_modules/@swc/helpers/esm/_instanceof.js
+var esm_instanceof = __webpack_require__(45204);
 // EXTERNAL MODULE: ./node_modules/.pnpm/cookie@0.7.2/node_modules/cookie/index.js
 var cookie = __webpack_require__(75216);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@modern-js+runtime@2.67.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@modern-js/runtime/dist/esm/core/loader/loaderManager.js
+var loaderManager = __webpack_require__(66892);
 ;// CONCATENATED MODULE: ./node_modules/.pnpm/@modern-js+runtime@2.67.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@modern-js/runtime/dist/esm/core/react/wrapper.js
 
 
 function wrapRuntimeContextProvider(App, contextValue) {
-  return /* @__PURE__ */ react.createElement(RuntimeReactContext.Provider, {
+  return /* @__PURE__ */ react.createElement(context_runtime/* RuntimeReactContext,Provider */.JO.Provider, {
     value: contextValue
   }, App);
 }
@@ -3468,7 +3507,7 @@ function browser_render() {
     return (0,tslib_es6/* __generator */.Jh)(this, function(_state) {
       switch (_state.label) {
         case 0:
-          context = getInitialContext();
+          context = (0,context_runtime/* getInitialContext */.zv)();
           runBeforeRender = function() {
             var _ref = (0,esm_async_to_generator._)(function(context2) {
               var internalRuntimeContext, api, hooks, init;
@@ -3519,7 +3558,7 @@ function browser_render() {
             return res;
           }, {});
           Object.assign(context, {
-            loaderManager: createLoaderManager(initialLoadersState, {
+            loaderManager: (0,loaderManager/* createLoaderManager */.K)(initialLoadersState, {
               skipStatic: true
             }),
             // garfish plugin params

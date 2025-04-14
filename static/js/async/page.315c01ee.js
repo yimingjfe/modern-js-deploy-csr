@@ -16,7 +16,10 @@ var Helmet = __webpack_require__(42748);
 ;// CONCATENATED MODULE: ./src/routes/index.css
 // extracted by css-extract-rspack-plugin
 
+// EXTERNAL MODULE: ./node_modules/.pnpm/@modern-js+runtime@2.67.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@modern-js/runtime/dist/esm/router/runtime/PrefetchLink.js
+var PrefetchLink = __webpack_require__(13105);
 ;// CONCATENATED MODULE: ./src/routes/page.tsx
+
 
 
 
@@ -32,6 +35,10 @@ var Index = ()=>/*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
             }),
             /*#__PURE__*/ (0,jsx_runtime.jsxs)("main", {
                 children: [
+                    /*#__PURE__*/ (0,jsx_runtime.jsx)(PrefetchLink/* Link */.rU, {
+                        to: "/user",
+                        children: "User"
+                    }),
                     /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
                         className: "title",
                         children: [

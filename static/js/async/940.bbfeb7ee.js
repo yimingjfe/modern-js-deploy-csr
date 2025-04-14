@@ -1,4 +1,266 @@
-(self["webpackChunkmodern_js_deploy_csr"] = self["webpackChunkmodern_js_deploy_csr"] || []).push([["86"], {
+(self["webpackChunkmodern_js_deploy_csr"] = self["webpackChunkmodern_js_deploy_csr"] || []).push([["940"], {
+13105: (function (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+"use strict";
+__webpack_require__.d(__webpack_exports__, {
+  rU: () => (Link)
+});
+/* ESM import */var _swc_helpers_async_to_generator__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(34902);
+/* ESM import */var _swc_helpers_object_spread__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(91209);
+/* ESM import */var _swc_helpers_object_without_properties__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(49045);
+/* ESM import */var _swc_helpers_sliced_to_array__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(41299);
+/* ESM import */var _swc_helpers_ts_generator__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(9787);
+/* ESM import */var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(52676);
+/* ESM import */var _modern_js_runtime_utils_router__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(13252);
+/* ESM import */var _modern_js_runtime_utils_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(92564);
+/* ESM import */var _modern_js_runtime_utils_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(37541);
+/* ESM import */var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(75271);
+/* ESM import */var _core__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(39714);
+
+
+
+
+
+
+
+
+
+function composeEventHandlers(theirHandler, ourHandler) {
+  return function(event) {
+    theirHandler === null || theirHandler === void 0 ? void 0 : theirHandler(event);
+    if (!event.defaultPrevented) {
+      ourHandler(event);
+    }
+  };
+}
+var ABSOLUTE_URL_REGEX = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i;
+function usePrefetchBehavior(prefetch, theirElementProps) {
+  var _React_useState = (0,_swc_helpers_sliced_to_array__WEBPACK_IMPORTED_MODULE_2__._)(react__WEBPACK_IMPORTED_MODULE_1__.useState(false), 2), maybePrefetch = _React_useState[0], setMaybePrefetch = _React_useState[1];
+  var _React_useState1 = (0,_swc_helpers_sliced_to_array__WEBPACK_IMPORTED_MODULE_2__._)(react__WEBPACK_IMPORTED_MODULE_1__.useState(false), 2), shouldPrefetch = _React_useState1[0], setShouldPrefetch = _React_useState1[1];
+  var onFocus = theirElementProps.onFocus, onBlur = theirElementProps.onBlur, onMouseEnter = theirElementProps.onMouseEnter, onMouseLeave = theirElementProps.onMouseLeave, onTouchStart = theirElementProps.onTouchStart;
+  react__WEBPACK_IMPORTED_MODULE_1__.useEffect(function() {
+    if (prefetch === "render") {
+      setShouldPrefetch(true);
+    }
+  }, [
+    prefetch
+  ]);
+  var setIntent = function() {
+    if (prefetch === "intent") {
+      setMaybePrefetch(true);
+    }
+  };
+  var cancelIntent = function() {
+    if (prefetch === "intent") {
+      setMaybePrefetch(false);
+      setShouldPrefetch(false);
+    }
+  };
+  react__WEBPACK_IMPORTED_MODULE_1__.useEffect(function() {
+    if (maybePrefetch) {
+      var id = setTimeout(function() {
+        setShouldPrefetch(true);
+      }, 100);
+      return function() {
+        clearTimeout(id);
+      };
+    }
+  }, [
+    maybePrefetch
+  ]);
+  return [
+    shouldPrefetch,
+    {
+      onFocus: composeEventHandlers(onFocus, setIntent),
+      onBlur: composeEventHandlers(onBlur, cancelIntent),
+      onMouseEnter: composeEventHandlers(onMouseEnter, setIntent),
+      onMouseLeave: composeEventHandlers(onMouseLeave, cancelIntent),
+      onTouchStart: composeEventHandlers(onTouchStart, setIntent)
+    }
+  ];
+}
+function loadRouteModule(route, routeAssets) {
+  return _loadRouteModule.apply(this, arguments);
+}
+function _loadRouteModule() {
+  _loadRouteModule = (0,_swc_helpers_async_to_generator__WEBPACK_IMPORTED_MODULE_3__._)(function(route, routeAssets) {
+    var routeId, chunkIds, error;
+    return (0,_swc_helpers_ts_generator__WEBPACK_IMPORTED_MODULE_4__/* .__generator */.Jh)(this, function(_state) {
+      switch (_state.label) {
+        case 0:
+          routeId = route.id;
+          if (!routeId) {
+            return [
+              2
+            ];
+          }
+          if (!routeAssets[routeId]) {
+            return [
+              2
+            ];
+          }
+          chunkIds = routeAssets[routeId].chunkIds;
+          if (!chunkIds) {
+            return [
+              2
+            ];
+          }
+          _state.label = 1;
+        case 1:
+          _state.trys.push([
+            1,
+            3,
+            ,
+            4
+          ]);
+          return [
+            4,
+            Promise.all(chunkIds.map(function(chunkId) {
+              return __webpack_require__.e === null || __webpack_require__.e === void 0 ? void 0 : __webpack_require__.e(chunkId);
+            }))
+          ];
+        case 2:
+          _state.sent();
+          return [
+            3,
+            4
+          ];
+        case 3:
+          error = _state.sent();
+          console.error(error);
+          return [
+            3,
+            4
+          ];
+        case 4:
+          return [
+            2
+          ];
+      }
+    });
+  });
+  return _loadRouteModule.apply(this, arguments);
+}
+var getRequestUrl = function(pathname, routeId) {
+  var LOADER_ID_PARAM = "__loader";
+  var DIRECT_PARAM = "__ssrDirect";
+  var _window_location = window.location, protocol = _window_location.protocol, host = _window_location.host;
+  var url = new URL(pathname, "".concat(protocol, "//").concat(host));
+  url.searchParams.append(LOADER_ID_PARAM, routeId);
+  url.searchParams.append(DIRECT_PARAM, "true");
+  return url;
+};
+var createDataHref = function(href) {
+  return /* @__PURE__ */ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("link", {
+    rel: "prefetch",
+    as: "fetch",
+    href
+  }, href);
+};
+var getDataHref = function(route, pathname, basename) {
+  var id = route.id;
+  var path = basename === "/" ? pathname : "".concat(basename).concat(pathname);
+  var url = getRequestUrl(path, id);
+  return createDataHref(url.toString());
+};
+var PrefetchPageLinks = function(param) {
+  var path = param.path;
+  var pathname = path.pathname;
+  var context = (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(_core__WEBPACK_IMPORTED_MODULE_5__/* .RuntimeReactContext */.JO);
+  var routeManifest = context.routeManifest, routes = context.routes;
+  var routeAssets = (routeManifest || {}).routeAssets;
+  var matches = Array.isArray(routes) ? (0,_modern_js_runtime_utils_router__WEBPACK_IMPORTED_MODULE_6__/* .matchRoutes */.fp)(routes, pathname) : [];
+  if (Array.isArray(matches) && routeAssets) {
+    matches === null || matches === void 0 ? void 0 : matches.forEach(function(match) {
+      return loadRouteModule(match.route, routeAssets);
+    });
+  }
+  if (!window._SSR_DATA) {
+    return null;
+  }
+  return /* @__PURE__ */ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(PrefetchDataLinks, {
+    matches,
+    path,
+    routeManifest
+  });
+};
+var PrefetchDataLinks = function(param) {
+  var matches = param.matches, path = param.path, routeManifest = param.routeManifest;
+  var pathname = path.pathname, search = path.search, hash = path.hash;
+  var currentMatches = (0,_modern_js_runtime_utils_router__WEBPACK_IMPORTED_MODULE_7__/* .useMatches */.SN)();
+  var basename = (0,_modern_js_runtime_utils_router__WEBPACK_IMPORTED_MODULE_7__/* .useHref */.oQ)("/");
+  var dataHrefs = (0,react__WEBPACK_IMPORTED_MODULE_1__.useMemo)(function() {
+    return matches === null || matches === void 0 ? void 0 : matches.filter(function(match, index) {
+      if (!match.route.loader || typeof match.route.loader !== "function" || match.route.loader.length === 0) {
+        return false;
+      }
+      if (match.route.shouldRevalidate) {
+        var _currentMatches_;
+        var currentUrl = new URL(location.pathname + location.search + location.hash, window.origin);
+        var nextUrl = new URL(pathname + search + hash, window.origin);
+        var shouldLoad = match.route.shouldRevalidate({
+          currentUrl,
+          currentParams: ((_currentMatches_ = currentMatches[0]) === null || _currentMatches_ === void 0 ? void 0 : _currentMatches_.params) || {},
+          nextUrl,
+          nextParams: match.params,
+          defaultShouldRevalidate: true
+        });
+        if (typeof shouldLoad === "boolean") {
+          return shouldLoad;
+        }
+      }
+      var currentMatch = currentMatches[index];
+      if (!currentMatch || currentMatch.id !== match.route.id) {
+        return true;
+      }
+      if (currentMatch.pathname !== match.pathname) {
+        return true;
+      }
+      if (currentMatch.pathname.endsWith("*") && currentMatch.params["*"] !== match.params["*"]) {
+        return true;
+      }
+      return false;
+    }).map(function(match) {
+      return getDataHref(match.route, pathname, basename);
+    });
+  }, [
+    matches,
+    pathname,
+    routeManifest
+  ]);
+  return /* @__PURE__ */ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+    children: dataHrefs
+  });
+};
+var createPrefetchLink = function(Link2) {
+  return /* @__PURE__ */ react__WEBPACK_IMPORTED_MODULE_1__.forwardRef(function(_param, forwardedRef) {
+    var to = _param.to, _param_prefetch = _param.prefetch, prefetch = _param_prefetch === void 0 ? "none" : _param_prefetch, props = (0,_swc_helpers_object_without_properties__WEBPACK_IMPORTED_MODULE_8__._)(_param, [
+      "to",
+      "prefetch"
+    ]);
+    var isAbsolute = typeof to === "string" && ABSOLUTE_URL_REGEX.test(to);
+    var _usePrefetchBehavior = (0,_swc_helpers_sliced_to_array__WEBPACK_IMPORTED_MODULE_2__._)(usePrefetchBehavior(prefetch, props), 2), shouldPrefetch = _usePrefetchBehavior[0], prefetchHandlers = _usePrefetchBehavior[1];
+    var resolvedPath = (0,_modern_js_runtime_utils_router__WEBPACK_IMPORTED_MODULE_7__/* .useResolvedPath */.WU)(to);
+    return /* @__PURE__ */ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+      children: [
+        /* @__PURE__ */ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(Link2, (0,_swc_helpers_object_spread__WEBPACK_IMPORTED_MODULE_9__._)({
+          ref: forwardedRef,
+          to
+        }, props, prefetchHandlers)),
+        shouldPrefetch && __webpack_require__.e && !isAbsolute ? /* @__PURE__ */ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(PrefetchPageLinks, {
+          path: resolvedPath
+        }) : null
+      ]
+    });
+  });
+};
+var Link = createPrefetchLink(_modern_js_runtime_utils_router__WEBPACK_IMPORTED_MODULE_10__/* .Link */.rU);
+Link.displayName = "Link";
+var NavLink = createPrefetchLink(_modern_js_runtime_utils_router__WEBPACK_IMPORTED_MODULE_10__/* .NavLink */.OL);
+NavLink.displayName = "NavLink";
+
+
+
+}),
 22767: (function (module) {
 "use strict";
 /*

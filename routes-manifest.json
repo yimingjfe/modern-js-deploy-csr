@@ -6,31 +6,40 @@
         "361",
         "126",
         "118",
-        "399",
+        "327",
         "909"
       ],
       "assets": [
         "/modern-js-deploy-csr/static/js/lib-react.fbd3c6e1.js",
         "/modern-js-deploy-csr/static/js/lib-polyfill.a0739db9.js",
-        "/modern-js-deploy-csr/static/js/lib-router.72f497a2.js",
-        "/modern-js-deploy-csr/static/js/399.2519b81b.js",
-        "/modern-js-deploy-csr/static/js/main.2caa737f.js"
+        "/modern-js-deploy-csr/static/js/lib-router.6186b746.js",
+        "/modern-js-deploy-csr/static/js/327.d5a0edd7.js",
+        "/modern-js-deploy-csr/static/js/main.d182b5de.js"
       ],
       "referenceCssAssets": []
     },
     "page": {
       "chunkIds": [
-        "86",
+        "940",
         "484"
       ],
       "assets": [
-        "/modern-js-deploy-csr/static/js/async/86.4a661a9a.js",
+        "/modern-js-deploy-csr/static/js/async/940.bbfeb7ee.js",
         "/modern-js-deploy-csr/static/css/async/page.59ac5142.css",
-        "/modern-js-deploy-csr/static/js/async/page.746780eb.js"
+        "/modern-js-deploy-csr/static/js/async/page.315c01ee.js"
       ],
       "referenceCssAssets": [
         "/modern-js-deploy-csr/static/css/async/page.59ac5142.css"
       ]
+    },
+    "user/page": {
+      "chunkIds": [
+        "590"
+      ],
+      "assets": [
+        "/modern-js-deploy-csr/static/js/async/user/page.ccc8570d.js"
+      ],
+      "referenceCssAssets": []
     }
   }
 }

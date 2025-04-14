@@ -644,8 +644,8 @@ window.__assetPrefix__ = '/modern-js-deploy-csr';
 
 },function(__webpack_require__) {
 var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId) }
-__webpack_require__.O(0, ["118","126","361","399",], function() {
-        return __webpack_exec__(953), __webpack_exec__(76762), __webpack_exec__(57434);
+__webpack_require__.O(0, ["118","126","327","361",], function() {
+        return __webpack_exec__(953), __webpack_exec__(76762), __webpack_exec__(17868);
       });
 var __webpack_exports__ = __webpack_require__.O();
 
