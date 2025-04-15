@@ -11,6 +11,7 @@
     "lint": "biome check",
     "prepare": "simple-git-hooks",
     "upgrade": "modern upgrade",
+    "deploy": "modern deploy",
     "deploy:gh-pages": "MODERNJS_DEPLOY=ghPages modern deploy && gh-pages -d .output"
   },
   "engines": {

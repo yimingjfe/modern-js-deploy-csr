@@ -27,7 +27,7 @@ jobs:
         run: pnpm install
 
       - name: Build
-        run: pnpm install
+        run: pnpm run deploy
         env:
           MODERNJS_DEPLOY: ghPages
 
