@@ -11,10 +11,10 @@ export default defineConfig({
     }),
   ],
   server: {
-    baseUrl: '/modern-js-deploy-csr',
+    baseUrl: '/modern-js-deploy-csr', // It should be replaced with your repository name
   },
   output: {
     minify: false,
-    assetPrefix: '/modern-js-deploy-csr/',
+    assetPrefix: '/modern-js-deploy-csr/', // It should be replaced with your repository name
   },
 });
