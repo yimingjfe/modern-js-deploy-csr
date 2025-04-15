@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/async/bbb_user/page.b921782c.js","sources":["webpack://modern-js-deploy-csr/./src/bbb/routes/user/page.tsx"],"sourcesContent":["export default function UserPage() {\n  return <div>UserPage</div>;\n}\n"],"names":["UserPage"],"mappings":";;;;;;;;;AAAe,SAASA;IACtB,qBAAO,uDAAC;kBAAI;;AACd"}

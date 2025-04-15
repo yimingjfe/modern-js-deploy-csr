@@ -1,6 +1,6 @@
 "use strict";
-(self["webpackChunkmodern_js_deploy_csr"] = self["webpackChunkmodern_js_deploy_csr"] || []).push([["590"], {
-70876: (function (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+(self["webpackChunkmodern_js_deploy_csr"] = self["webpackChunkmodern_js_deploy_csr"] || []).push([["892"], {
+31737: (function (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 __webpack_require__.r(__webpack_exports__);
 __webpack_require__.d(__webpack_exports__, {
   "default": () => (UserPage)

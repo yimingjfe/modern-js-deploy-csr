@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/async/aaa_user/page.7995d94e.js","sources":["webpack://modern-js-deploy-csr/./src/aaa/routes/user/page.tsx"],"sourcesContent":["export default function UserPage() {\n  return <div>UserPage</div>;\n}\n"],"names":["UserPage"],"mappings":";;;;;;;;;AAAe,SAASA;IACtB,qBAAO,uDAAC;kBAAI;;AACd"}

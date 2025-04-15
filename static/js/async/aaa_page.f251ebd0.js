@@ -1,6 +1,6 @@
 "use strict";
-(self["webpackChunkmodern_js_deploy_csr"] = self["webpackChunkmodern_js_deploy_csr"] || []).push([["484"], {
-58623: (function (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+(self["webpackChunkmodern_js_deploy_csr"] = self["webpackChunkmodern_js_deploy_csr"] || []).push([["744"], {
+86339: (function (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
@@ -13,12 +13,12 @@ __webpack_require__.d(__webpack_exports__, {
 var jsx_runtime = __webpack_require__(52676);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react-helmet@6.1.0_react@18.3.1/node_modules/react-helmet/es/Helmet.js
 var Helmet = __webpack_require__(42748);
-;// CONCATENATED MODULE: ./src/routes/index.css
+;// CONCATENATED MODULE: ./src/aaa/routes/index.css
 // extracted by css-extract-rspack-plugin
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/@modern-js+runtime@2.67.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@modern-js/runtime/dist/esm/router/runtime/PrefetchLink.js
 var PrefetchLink = __webpack_require__(13105);
-;// CONCATENATED MODULE: ./src/routes/page.tsx
+;// CONCATENATED MODULE: ./src/aaa/routes/page.tsx
 
 
 
