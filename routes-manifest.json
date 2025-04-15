@@ -10,11 +10,11 @@
         "651"
       ],
       "assets": [
-        "/modern-js-deploy-csr/static/js/lib-react.fbd3c6e1.js",
-        "/modern-js-deploy-csr/static/js/lib-polyfill.a0739db9.js",
-        "/modern-js-deploy-csr/static/js/lib-router.6186b746.js",
-        "/modern-js-deploy-csr/static/js/14.6230ed35.js",
-        "/modern-js-deploy-csr/static/js/aaa.9f56b22c.js"
+        "/static/js/lib-react.fbd3c6e1.js",
+        "/static/js/lib-polyfill.a0739db9.js",
+        "/static/js/lib-router.6186b746.js",
+        "/static/js/14.6230ed35.js",
+        "/static/js/aaa.49352346.js"
       ],
       "referenceCssAssets": []
     },
@@ -24,12 +24,12 @@
         "744"
       ],
       "assets": [
-        "/modern-js-deploy-csr/static/js/async/940.bbfeb7ee.js",
-        "/modern-js-deploy-csr/static/js/async/aaa_page.f251ebd0.js",
-        "/modern-js-deploy-csr/static/css/async/aaa_page.59ac5142.css"
+        "/static/js/async/940.bbfeb7ee.js",
+        "/static/js/async/aaa_page.f251ebd0.js",
+        "/static/css/async/aaa_page.59ac5142.css"
       ],
       "referenceCssAssets": [
-        "/modern-js-deploy-csr/static/css/async/aaa_page.59ac5142.css"
+        "/static/css/async/aaa_page.59ac5142.css"
       ]
     },
     "aaa_user/page": {
@@ -37,7 +37,7 @@
         "892"
       ],
       "assets": [
-        "/modern-js-deploy-csr/static/js/async/aaa_user/page.7995d94e.js"
+        "/static/js/async/aaa_user/page.7995d94e.js"
       ],
       "referenceCssAssets": []
     },
@@ -51,11 +51,11 @@
         "745"
       ],
       "assets": [
-        "/modern-js-deploy-csr/static/js/lib-react.fbd3c6e1.js",
-        "/modern-js-deploy-csr/static/js/lib-polyfill.a0739db9.js",
-        "/modern-js-deploy-csr/static/js/lib-router.6186b746.js",
-        "/modern-js-deploy-csr/static/js/14.6230ed35.js",
-        "/modern-js-deploy-csr/static/js/bbb.1426a245.js"
+        "/static/js/lib-react.fbd3c6e1.js",
+        "/static/js/lib-polyfill.a0739db9.js",
+        "/static/js/lib-router.6186b746.js",
+        "/static/js/14.6230ed35.js",
+        "/static/js/bbb.f77ffd4c.js"
       ],
       "referenceCssAssets": []
     },
@@ -65,12 +65,12 @@
         "596"
       ],
       "assets": [
-        "/modern-js-deploy-csr/static/js/async/940.bbfeb7ee.js",
-        "/modern-js-deploy-csr/static/css/async/bbb_page.59ac5142.css",
-        "/modern-js-deploy-csr/static/js/async/bbb_page.be1478ff.js"
+        "/static/js/async/940.bbfeb7ee.js",
+        "/static/css/async/bbb_page.59ac5142.css",
+        "/static/js/async/bbb_page.be1478ff.js"
       ],
       "referenceCssAssets": [
-        "/modern-js-deploy-csr/static/css/async/bbb_page.59ac5142.css"
+        "/static/css/async/bbb_page.59ac5142.css"
       ]
     },
     "bbb_user/page": {
@@ -78,7 +78,7 @@
         "899"
       ],
       "assets": [
-        "/modern-js-deploy-csr/static/js/async/bbb_user/page.b921782c.js"
+        "/static/js/async/bbb_user/page.b921782c.js"
       ],
       "referenceCssAssets": []
     }

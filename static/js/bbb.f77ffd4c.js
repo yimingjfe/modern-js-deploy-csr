@@ -738,8 +738,8 @@ function Layout() {
 
 
 }),
-953: (function () {
-window.__assetPrefix__ = '/modern-js-deploy-csr';
+50803: (function () {
+window.__assetPrefix__ = '';
 
 
 }),
@@ -747,7 +747,7 @@ window.__assetPrefix__ = '/modern-js-deploy-csr';
 },function(__webpack_require__) {
 var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId) }
 __webpack_require__.O(0, ["118","126","14","361",], function() {
-        return __webpack_exec__(953), __webpack_exec__(76762), __webpack_exec__(34592);
+        return __webpack_exec__(50803), __webpack_exec__(76762), __webpack_exec__(34592);
       });
 var __webpack_exports__ = __webpack_require__.O();
 
