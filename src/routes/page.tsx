@@ -11,6 +11,7 @@ const Index = () => (
         href="https://lf3-static.bytednsdoc.com/obj/eden-cn/uhbfnupenuhf/favicon.ico"
       />
     </Helmet>
+    new way
     <main>
       <Link to="/user">User</Link>
       <div className="title">
