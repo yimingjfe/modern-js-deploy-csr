@@ -1,108 +1,13 @@
 "use strict";
-(self["webpackChunkmodern_js_deploy_csr"] = self["webpackChunkmodern_js_deploy_csr"] || []).push([["745"], {
-34592: (function (__unused_webpack_module, __unused_webpack___webpack_exports__, __webpack_require__) {
+(self["webpackChunkmodern_js_deploy_csr"] = self["webpackChunkmodern_js_deploy_csr"] || []).push([["909"], {
+57597: (function (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/* ESM import */var _modern_js_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(74874);
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(52676);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@modern-js+runtime@2.67.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@modern-js/runtime/dist/esm/core/context/index.js
-var context = __webpack_require__(30995);
-// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
-var react = __webpack_require__(75271);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@modern-js+runtime@2.67.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@modern-js/runtime/dist/esm/router/runtime/routeModule.js
-var runtime_routeModule = __webpack_require__(9255);
-// EXTERNAL MODULE: ./src/bbb/routes/layout.tsx
-var layout = __webpack_require__(167);
-;// CONCATENATED MODULE: ./node_modules/.modern-js/bbb/routes.js
-
-
-
-if (typeof document !== 'undefined') {
-    window._routeModules = {};
-}
-var routes = [
-    {
-        "path": "/",
-        "children": [
-            {
-                "_component": "@_modern_js_src/bbb/routes/page",
-                "index": true,
-                "id": "bbb_page",
-                "type": "nested",
-                "lazyImport": ()=>Promise.all(/* import() | bbb_page */ [__webpack_require__.e("940"), __webpack_require__.e("596")]).then(__webpack_require__.bind(__webpack_require__, 81995)).then((routeModule)=>(0,runtime_routeModule/* handleRouteModule */.u3)(routeModule, "bbb_page")).catch(runtime_routeModule/* handleRouteModuleError */.UC),
-                "component": /*#__PURE__*/ (0,react.lazy)(()=>Promise.all(/* import() | bbb_page */ [__webpack_require__.e("940"), __webpack_require__.e("596")]).then(__webpack_require__.bind(__webpack_require__, 81995)).then((routeModule)=>(0,runtime_routeModule/* handleRouteModule */.u3)(routeModule, "bbb_page")).catch(runtime_routeModule/* handleRouteModuleError */.UC))
-            },
-            {
-                "_component": "@_modern_js_src/bbb/routes/user/page",
-                "id": "bbb_user/page",
-                "type": "nested",
-                "path": "user",
-                "lazyImport": ()=>__webpack_require__.e(/* import() | bbb_user/page */ "899").then(__webpack_require__.bind(__webpack_require__, 47854)).then((routeModule)=>(0,runtime_routeModule/* handleRouteModule */.u3)(routeModule, "bbb_user/page")).catch(runtime_routeModule/* handleRouteModuleError */.UC),
-                "component": /*#__PURE__*/ (0,react.lazy)(()=>__webpack_require__.e(/* import() | bbb_user/page */ "899").then(__webpack_require__.bind(__webpack_require__, 47854)).then((routeModule)=>(0,runtime_routeModule/* handleRouteModule */.u3)(routeModule, "bbb_user/page")).catch(runtime_routeModule/* handleRouteModuleError */.UC))
-            }
-        ],
-        "isRoot": true,
-        "_component": "@_modern_js_src/bbb/routes/layout",
-        "id": "bbb_layout",
-        "type": "nested",
-        "lazyImport": ()=>Promise.resolve(/* import() */).then(__webpack_require__.bind(__webpack_require__, 167)).then((routeModule)=>(0,runtime_routeModule/* handleRouteModule */.u3)(routeModule, "bbb_layout")).catch(runtime_routeModule/* handleRouteModuleError */.UC),
-        "component": layout["default"]
-    }
-];
-
-;// CONCATENATED MODULE: ./node_modules/.modern-js/bbb/runtime-global-context.js
-
-var appConfig;
-var appInit;
-var layoutApp;
-
-var entryName = 'bbb';
-(0,context/* setGlobalContext */.cE)({
-    entryName,
-    layoutApp,
-    routes: routes,
-    appInit,
-    appConfig
-});
-
-// EXTERNAL MODULE: ./node_modules/.pnpm/@modern-js+runtime@2.67.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@modern-js/runtime/dist/esm/core/plugin/index.js + 9 modules
-var core_plugin = __webpack_require__(49903);
-// EXTERNAL MODULE: ./src/modern.runtime.ts
-var modern_runtime = __webpack_require__(57597);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@modern-js+runtime@2.67.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@modern-js/runtime/dist/esm/router/runtime/plugin.js + 8 modules
-var runtime_plugin = __webpack_require__(54593);
-;// CONCATENATED MODULE: ./node_modules/.modern-js/bbb/runtime-register.js
-
-
-
-var runtimeConfig = typeof modern_runtime/* default */.Z === 'function' ? (0,modern_runtime/* default */.Z)((0,context/* getCurrentEntryName */.te)()) : modern_runtime/* default */.Z;
-var plugins = [];
-
-plugins.push((0,runtime_plugin/* routerPlugin */.NA)((0,core_plugin/* mergeConfig */.f)({
-    "serverBase": [
-        "/modern-js-deploy-csr/bbb"
-    ]
-}, (runtimeConfig || {})['router'], ((runtimeConfig || {})['routerByEntries'] || {})['bbb'], ((0,context/* getGlobalAppConfig */.nB)() || {})['router'])));
-(0,core_plugin/* registerPlugin */.v)(plugins, runtimeConfig);
-
-;// CONCATENATED MODULE: ./node_modules/.modern-js/bbb/register.js
-
-
-
-// EXTERNAL MODULE: ./node_modules/.pnpm/@modern-js+runtime@2.67.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@modern-js/runtime/dist/esm/core/react/index.js + 2 modules
-var core_react = __webpack_require__(83794);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@modern-js+runtime@2.67.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@modern-js/runtime/dist/esm/core/browser/index.js + 9 modules
-var browser = __webpack_require__(68723);
-;// CONCATENATED MODULE: ./node_modules/.modern-js/bbb/index.jsx
-
-
-
-
-var ModernRoot = (0,core_react/* createRoot */.s)();
-(0,browser/* render */.sY)(/*#__PURE__*/ (0,jsx_runtime.jsx)(ModernRoot, {}), 'root');
+/* ESM default export */ __webpack_exports__.Z = ((0,_modern_js_runtime__WEBPACK_IMPORTED_MODULE_0__/* .defineRuntimeConfig */.mc)({}));
 
 
 }),
-167: (function (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+20154: (function (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 __webpack_require__.r(__webpack_exports__);
 __webpack_require__.d(__webpack_exports__, {
   "default": () => (Layout)
@@ -116,13 +21,6 @@ function Layout() {
         children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(_modern_js_runtime_router__WEBPACK_IMPORTED_MODULE_1__/* .Outlet */.j3, {})
     });
 }
-
-
-}),
-57597: (function (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-/* ESM import */var _modern_js_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(74874);
-
-/* ESM default export */ __webpack_exports__.Z = ((0,_modern_js_runtime__WEBPACK_IMPORTED_MODULE_0__/* .defineRuntimeConfig */.mc)({}));
 
 
 }),
@@ -738,16 +636,16 @@ function Layout() {
 
 
 }),
-50803: (function () {
-window.__assetPrefix__ = '';
+953: (function () {
+window.__assetPrefix__ = '/modern-js-deploy-csr';
 
 
 }),
 
 },function(__webpack_require__) {
 var __webpack_exec__ = function(moduleId) { return __webpack_require__(__webpack_require__.s = moduleId) }
-__webpack_require__.O(0, ["118","126","14","361",], function() {
-        return __webpack_exec__(50803), __webpack_exec__(76762), __webpack_exec__(34592);
+__webpack_require__.O(0, ["118","126","327","361",], function() {
+        return __webpack_exec__(953), __webpack_exec__(76762), __webpack_exec__(17868);
       });
 var __webpack_exports__ = __webpack_require__.O();
 

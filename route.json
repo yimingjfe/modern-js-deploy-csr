@@ -1,18 +1,9 @@
 {
   "routes": [
     {
-      "urlPath": "/modern-js-deploy-csr/aaa",
-      "entryName": "aaa",
-      "entryPath": "html/aaa/index.html",
-      "isSPA": true,
-      "isStream": false,
-      "isSSR": false,
-      "isRSC": false
-    },
-    {
-      "urlPath": "/modern-js-deploy-csr/bbb",
-      "entryName": "bbb",
-      "entryPath": "html/bbb/index.html",
+      "urlPath": "/modern-js-deploy-csr",
+      "entryName": "main",
+      "entryPath": "html/main/index.html",
       "isSPA": true,
       "isStream": false,
       "isSSR": false,

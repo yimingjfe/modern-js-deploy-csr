@@ -1,84 +1,43 @@
 {
   "routeAssets": {
-    "aaa": {
+    "main": {
       "chunkIds": [
         "242",
         "361",
         "126",
         "118",
-        "14",
-        "651"
+        "327",
+        "909"
       ],
       "assets": [
-        "/static/js/lib-react.fbd3c6e1.js",
-        "/static/js/lib-polyfill.a0739db9.js",
-        "/static/js/lib-router.6186b746.js",
-        "/static/js/14.6230ed35.js",
-        "/static/js/aaa.49352346.js"
+        "/modern-js-deploy-csr/static/js/lib-react.fbd3c6e1.js",
+        "/modern-js-deploy-csr/static/js/lib-polyfill.a0739db9.js",
+        "/modern-js-deploy-csr/static/js/lib-router.6186b746.js",
+        "/modern-js-deploy-csr/static/js/327.d5a0edd7.js",
+        "/modern-js-deploy-csr/static/js/main.d182b5de.js"
       ],
       "referenceCssAssets": []
     },
-    "aaa_page": {
+    "page": {
       "chunkIds": [
         "940",
-        "744"
+        "484"
       ],
       "assets": [
-        "/static/js/async/940.bbfeb7ee.js",
-        "/static/js/async/aaa_page.f251ebd0.js",
-        "/static/css/async/aaa_page.59ac5142.css"
+        "/modern-js-deploy-csr/static/js/async/940.bbfeb7ee.js",
+        "/modern-js-deploy-csr/static/css/async/page.59ac5142.css",
+        "/modern-js-deploy-csr/static/js/async/page.315c01ee.js"
       ],
       "referenceCssAssets": [
-        "/static/css/async/aaa_page.59ac5142.css"
+        "/modern-js-deploy-csr/static/css/async/page.59ac5142.css"
       ]
     },
-    "aaa_user/page": {
+    "user/page": {
       "chunkIds": [
-        "892"
+        "590"
       ],
       "assets": [
-        "/static/js/async/aaa_user/page.7995d94e.js"
-      ],
-      "referenceCssAssets": []
-    },
-    "bbb": {
-      "chunkIds": [
-        "242",
-        "361",
-        "126",
-        "118",
-        "14",
-        "745"
-      ],
-      "assets": [
-        "/static/js/lib-react.fbd3c6e1.js",
-        "/static/js/lib-polyfill.a0739db9.js",
-        "/static/js/lib-router.6186b746.js",
-        "/static/js/14.6230ed35.js",
-        "/static/js/bbb.f77ffd4c.js"
-      ],
-      "referenceCssAssets": []
-    },
-    "bbb_page": {
-      "chunkIds": [
-        "940",
-        "596"
-      ],
-      "assets": [
-        "/static/js/async/940.bbfeb7ee.js",
-        "/static/css/async/bbb_page.59ac5142.css",
-        "/static/js/async/bbb_page.be1478ff.js"
-      ],
-      "referenceCssAssets": [
-        "/static/css/async/bbb_page.59ac5142.css"
-      ]
-    },
-    "bbb_user/page": {
-      "chunkIds": [
-        "899"
-      ],
-      "assets": [
-        "/static/js/async/bbb_user/page.b921782c.js"
+        "/modern-js-deploy-csr/static/js/async/user/page.ccc8570d.js"
       ],
       "referenceCssAssets": []
     }
