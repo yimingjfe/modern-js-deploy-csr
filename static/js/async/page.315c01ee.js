@@ -33,7 +33,6 @@ var Index = ()=>/*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
                     href: "https://lf3-static.bytednsdoc.com/obj/eden-cn/uhbfnupenuhf/favicon.ico"
                 })
             }),
-            "new way",
             /*#__PURE__*/ (0,jsx_runtime.jsxs)("main", {
                 children: [
                     /*#__PURE__*/ (0,jsx_runtime.jsx)(PrefetchLink/* Link */.rU, {
